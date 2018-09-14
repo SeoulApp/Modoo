@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="12"
+    tools:context="com.minsung.examples.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#0f1011"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="-2.7sp"
+            android:gravity="center_horizontal"
+            android:text="빨간불입니다"
+            android:fontFamily="@font/notosanskr_bold_hestia"
+            android:id="@+id/main_tv_msgTop"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#71747b"
+            android:letterSpacing="-0.07"
+            android:lineSpacingExtra="-1.3sp"
+            android:gravity="center_horizontal"
+            android:text="안전선 안에서 잠시 기다려주세요 !"
+            android:fontFamily="@font/notosanskr_regular_hestia"
+            android:id="@+id/main_tv_msgBottom"
+            android:layout_below="@id/main_tv_msgTop"/>
+
+
+        <ImageView
+            android:id="@+id/main_iv_sign"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main_tv_msgBottom"
+
+            android:layout_marginStart="30dp"
+            android:scaleType="centerInside"
+            android:layout_marginBottom="-60dp"
+            android:src="@drawable/ic_red_light" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main_lv_time"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/main_iv_sign"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/main_tv_time_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-20dp"
+            android:layout_marginEnd="100dp"
+            android:fontFamily="@font/notosanskr_regular_hestia"
+            android:gravity="center_horizontal"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="1.3sp"
+            android:text="남은시간"
+            android:textColor="#2d2c45"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/main_tv_time_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="-7.7sp"
+                android:text="0"
+                android:textColor="#2d2c45"
+                android:textSize="50sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="-4.3sp"
+                android:text="분"
+                android:textColor="#2d2c45"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/main_tv_time_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="-7.7sp"
+                android:text="0"
+                android:textColor="#2d2c45"
+                android:textSize="50sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="-4.3sp"
+                android:text="초"
+                android:textColor="#2d2c45"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/main_pb_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="35dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="알림 ON"
+            android:fontFamily="@font/notosanskr_bold_hestia"
+            android:textSize="20sp"
+            android:background="@drawable/main_btn_boarders"
+            android:backgroundTint="@color/color_btn_selected"
+            android:shadowColor="@color/color_btn_shadow" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="알림 OFF"
+            android:fontFamily="@font/notosanskr_bold_hestia"
+            android:textSize="20sp"
+            android:background="@drawable/main_btn_boarders"
+            android:backgroundTint="@color/color_btn_not_selected" />
+    </LinearLayout>
+
+</LinearLayout>
