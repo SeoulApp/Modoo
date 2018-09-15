@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="274" height="284" viewBox="0 0 274 284">
+    <defs>
+        <filter id="a" width="148.5%" height="146.5%" x="-16.5%" y="-13%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0762001812 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <radialGradient id="d" cy="42.969%" r="104.369%" fx="50%" fy="42.969%" gradientTransform="matrix(0 .95814 -1 0 .93 -.05)">
+            <stop offset="0%" stop-color="#FF6969"/>
+            <stop offset="32.476%" stop-color="#F71F1F"/>
+            <stop offset="91.23%" stop-color="#A70606"/>
+            <stop offset="100%" stop-color="#BA0505"/>
+        </radialGradient>
+        <rect id="c" width="206" height="215" rx="20"/>
+        <filter id="b" width="166%" height="163.3%" x="-25.2%" y="-22.3%" filterUnits="objectBoundingBox">
+            <feOffset dx="13" dy="17" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="16.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.778539541 0 0 0 0 0.778539541 0 0 0 0 0.778539541 0 0 0 0.623443161 0"/>
+            <feOffset dx="3" dy="3" in="SourceAlpha" result="shadowOffsetOuter2"/>
+            <feGaussianBlur in="shadowOffsetOuter2" result="shadowBlurOuter2" stdDeviation="5"/>
+            <feComposite in="shadowBlurOuter2" in2="SourceAlpha" operator="out" result="shadowBlurOuter2"/>
+            <feColorMatrix in="shadowBlurOuter2" result="shadowMatrixOuter2" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.136067708 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="shadowMatrixOuter2"/>
+            </feMerge>
+        </filter>
+        <filter id="e" width="148.5%" height="146.5%" x="-16.5%" y="-14%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="6.5"/>
+            <feOffset dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="nonzero" filter="url(#a)" transform="translate(21 16)">
+        <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+        <use fill="url(#d)" xlink:href="#c"/>
+        <use fill="#000" filter="url(#e)" xlink:href="#c"/>
+        <rect width="201" height="210" x="2.5" y="2.5" stroke="#0F1011" stroke-linejoin="square" stroke-width="5" rx="20"/>
+        <path fill="#0F1011" stroke="#0F1011" d="M103.493 126.774c.419 0 4.47 14.007 12.155 42.02a3 3 0 0 0 2.893 2.206H131v-4.71a2 2 0 0 0-1.275-1.864l-5.561-2.164-7.337-51.769-1.494-24.24a1 1 0 0 1 1.835-.61l6.716 10.273a2 2 0 0 1 .326 1.094v19.369a1 1 0 0 0 1.642.766l3.431-2.874a2 2 0 0 0 .716-1.519l.166-23.936a3 3 0 0 0-.095-.772c-2.406-9.309-4.908-15.211-7.505-17.708-3.949-3.796-15.45-5.99-15.437-5.995.774-.322 2.372-1.684 4.795-4.087.71-2.736 1.066-4.98 1.066-6.733 0-5.258-4.252-9.521-9.496-9.521-5.244 0-9.496 4.263-9.496 9.521 0 1.753.44 3.997 1.322 6.733 2.252 2.403 3.766 3.765 4.54 4.087.011.005-12.084 2.85-15.464 5.995-2.216 2.063-4.962 7.932-8.236 17.607a3 3 0 0 0-.158.988l.204 23.82a2 2 0 0 0 .719 1.52l3.46 2.883a1 1 0 0 0 1.64-.768V97.029a2 2 0 0 1 .345-1.124l7.23-10.64a1 1 0 0 1 1.826.581l-.462 24.25-6.568 52.166-6.565 2.203a2 2 0 0 0-1.363 1.896V171h12.696a3 3 0 0 0 2.905-2.253c7.198-27.982 11.007-41.973 11.425-41.973z"/>
+    </g>
+</svg>
