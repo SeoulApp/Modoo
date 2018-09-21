@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.minsung.examples">
 
-    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -11,24 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-
         </activity>
-
-
-
-
-        <activity android:name=".tutorial"></activity>
-        <activity android:name=".tutorial2"></activity>
-        <activity android:name=".drawer"></activity>
-
+        <activity android:name=".tutorial" />
+        <activity android:name=".tutorial2" />
+        <activity android:name=".drawer" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

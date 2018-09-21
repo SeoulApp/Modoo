@@ -7,5 +7,9 @@
     <color name="color_btn_selected">#ffffff</color>
     <color name="color_btn_border">#e8eaf1</color>
     <color name="color_btn_shadow">#0f000000</color>
-
+    <color name="color_transparent">#00000000</color>
+    <color name="color_splash_background">#5a75bb</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_red_light">#ff4444</color>
+    <color name="color_green_light">#0d9c43</color>
 </resources>

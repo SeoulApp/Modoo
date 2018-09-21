@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">모두의 신호등</string>
+    <string name="app_splash">모두의\n신호등</string>
+    <string name="app_splash_btm">교통약자를 배려한 신호시간 맞춤  서비스</string>
+    <string name="str_green_light">초록불입니다</string>
+    <string name="str_green_detail">주변을 살피며 안전하게 건너가세요!</string>
+    <string name="str_time_left">남은시간</string>
+
 </resources>
