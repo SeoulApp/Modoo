@@ -12,4 +12,6 @@
     <color name="color_white">#ffffff</color>
     <color name="color_red_light">#ff4444</color>
     <color name="color_green_light">#0d9c43</color>
+    <color name="color_noti_detail">#71747b</color>
+
 </resources>
