@@ -19,11 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tutorial" />
-        <activity android:name=".tutorial2" />
-        <activity android:name=".drawer" />
+        <activity android:name=".Tutorial.tutorial" />
+        <activity android:name=".Tutorial.tutorial2" />
+        <activity android:name=".Info.InfoMain" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Info.Register"></activity>
+        <activity android:name=".Info.RegisterOption"></activity>
         <activity android:name=".CardAuthenticationActivity"></activity>
+        <activity android:name=".Info.RegisterNumber"></activity>
     </application>
 
 </manifest>

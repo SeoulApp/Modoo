@@ -17,6 +17,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.minsung.examples.Info.InfoMain;
+import com.minsung.examples.Tutorial.tutorial;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         tv_light = (TextView) findViewById(R.id.main_tv_msgTop);
         tv_light_detail = (TextView) findViewById(R.id.main_tv_msgBottom);
         ib_drawer = (ImageButton) findViewById(R.id.main_ib_drawer);
-        btn_alarmOn = (Button) findViewById(R.id.main_btn_alarmOn);
-        btn_alarmOff = (Button) findViewById(R.id.main_btn_alarmOff);
+//        btn_alarmOn = (Button) findViewById(R.id.main_btn_alarmOn);
+//        btn_alarmOff = (Button) findViewById(R.id.main_btn_alarmOff);
         pb_progress = (ProgressBar) findViewById(R.id.main_pb_progress);
         test_btn_sign = findViewById(R.id.main_iv_sign);
 
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         Permission permission = new Permission(getApplicationContext(),this);
         permission.checkPermission();
 
-        final Intent intent = new Intent(this, tutorial.class);
+        final Intent intent = new Intent(this, InfoMain.class);
         ib_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,4 +195,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-

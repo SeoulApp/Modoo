@@ -46,12 +46,14 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/line1"
             android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
             android:gravity="bottom"
             android:background="@drawable/up_down_border"
+            android:clickable="true"
             android:orientation="vertical">
 
             <TextView
@@ -75,11 +77,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/line2"
             android:padding="20dp"
             android:layout_weight="1.2"
             android:gravity="bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:orientation="vertical">
 
             <TextView

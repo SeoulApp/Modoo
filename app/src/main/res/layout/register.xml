@@ -60,10 +60,12 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/option1"
                 android:layout_margin="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -100,10 +102,12 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/option2"
                 android:layout_weight="1"
                 android:layout_margin="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -138,10 +142,12 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/option3"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -176,10 +182,12 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/option4"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
