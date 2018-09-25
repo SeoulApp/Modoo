@@ -22,6 +22,7 @@
             android:layout_marginTop="35dp"
             android:gravity="center"
             android:textSize="20dp"
+            android:layout_weight="1"
             android:text="흐릿하게 보이는 신호등" />
 
 
@@ -30,6 +31,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center_horizontal"
+            android:layout_weight="1"
             >
 
             <TextView
@@ -76,6 +78,7 @@
             android:layout_height="250dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="17.3dp"
+            android:layout_weight="1"
             app:srcCompat="@android:drawable/sym_def_app_icon" />
 
         <TextView

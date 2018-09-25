@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:gravity="left"
-            android:background="0xFFFFFF"
+            android:background="#FFFFFF"
+
             android:paddingLeft="10dp"
             android:text="←" />
 
@@ -64,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="30dp"
-                        android:textColor="0x000000"
+                        android:textColor="#000000"
 
                         android:text="홍길동 " />
 
@@ -94,6 +95,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="#f5f6f9"
                         android:text="변경하기 >" />
                 </LinearLayout>
 
@@ -121,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+3 "
-                        android:textColor="0x000000"
+                        android:textColor="#000000"
                         android:textSize="30dp" />
 
                     <TextView
@@ -146,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:textColor="0x000000"
+                android:textColor="#000000"
                 android:textSize="20dp"
                 android:text="시간연장 기능" />
 
@@ -154,6 +156,7 @@
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#f5f6f9"
 
                 android:text="켜기" />
 
@@ -161,6 +164,7 @@
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#f5f6f9"
 
                 android:text="끄기" />
 
@@ -204,7 +208,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="0x00000000"
+                android:textColor="#000000"
                 android:background="@drawable/up_border"
                 android:text="확인" />
         </LinearLayout>
