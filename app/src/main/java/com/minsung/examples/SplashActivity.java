@@ -56,14 +56,6 @@ public class SplashActivity extends Activity {
 //            editor.commit();
 //        }
 
-
-
-
-
-
-
-
-
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
