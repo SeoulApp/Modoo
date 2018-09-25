@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.minsung.examples.MainActivity;
 import com.minsung.examples.R;
 
 public class tutorial2 extends Activity {
 
     private ImageView imageView;
-    private Button button;
+
+    private Button btn_next;
+    private Button btn_back;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +24,21 @@ public class tutorial2 extends Activity {
         //imageView = (ImageView)findViewById(R.id.imageView1);
         //imageView.setImageResource(R.drawable.ic_red_light);
 
-        button = (Button) findViewById(R.id.button4);
+        btn_back = (Button) findViewById(R.id.tutorial2_btn_back);
+        btn_next = (Button) findViewById(R.id.tutorial2_btn_next);
 
-        final Intent intent = new Intent(this,MainActivity.class);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(tutorial2.this,tutorial3.class);
                 startActivity(intent);
-
             }
         });
 

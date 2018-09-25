@@ -23,10 +23,11 @@
         <activity android:name=".Tutorial.tutorial2" />
         <activity android:name=".Info.InfoMain" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Info.Register"></activity>
-        <activity android:name=".Info.RegisterOption"></activity>
-        <activity android:name=".CardAuthenticationActivity"></activity>
-        <activity android:name=".Info.RegisterNumber"></activity>
+        <activity android:name=".Info.Register" />
+        <activity android:name=".Info.RegisterOption" />
+        <activity android:name=".CardAuthenticationActivity" />
+        <activity android:name=".Info.RegisterNumber" />
+        <activity android:name=".Tutorial.tutorial3"></activity>
     </application>
 
 </manifest>
