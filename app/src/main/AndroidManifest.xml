@@ -22,7 +22,8 @@
         <activity android:name=".tutorial" />
         <activity android:name=".tutorial2" />
         <activity android:name=".drawer" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CardAuthenticationActivity"></activity>
     </application>
 
 </manifest>

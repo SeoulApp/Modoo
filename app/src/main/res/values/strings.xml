@@ -7,4 +7,16 @@
     <string name="str_time_left">남은시간</string>
     <string name="str_green_light2">초록불</string>
     <string name="str_red_light2">빨간불</string>
+
+    <!--authentication-->
+    <string name="str_authentication_title">인증방법 선택</string>
+    <string name="str_authentication_title_detail">보행장애 인증 방법을 선택하세요</string>
+
+    <string name="str_authentication_card">카드촬영</string>
+    <string name="str_authentication_card_detail">복지카드 혹은 주민등록증을 촬영</string>
+
+    <string name="str_authentication_input">직접입력</string>
+    <string name="str_authentication_input_detail">주민등록번호를 입력합니다</string>
+
+    <string name="str_authentication_card_photo">가이드 선에 맞춰 등록증 촬영</string>
 </resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.minsung.examples.CardAuthenticationActivity">
+
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:background="@color/color_transparent"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_authentication_card_photo"
+        android:textSize="30sp"
+        android:textColor="@color/color_black"
+        android:fontFamily="@font/notosanskr_medium_hestia"
+        android:layout_centerInParent="true"
+        />
+
+
+
+
+
+</RelativeLayout>
