@@ -46,8 +46,13 @@ public class InfoMain extends Activity {
                 startActivity(intent);
             }
         });
+    }
 
-
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        name.setText(Database.getUserName());
+        grade.setText(Database.getUserGrade());
+        bonus.setText(Database.getBounusTime());
     }
 }
