@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,17 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:gravity="end"
-        android:paddingEnd="10dp">
+        android:layout_weight="1">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/main_ib_drawer"
-            android:src="@drawable/ic_drawer"
-            android:background="@color/color_transparent"/>
 
     </LinearLayout>
 
@@ -101,12 +93,34 @@
             android:layout_marginStart="50dp"
             android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/main_tv_time_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="-7.7sp"
+                android:text="0"
+                android:textColor="#2d2c45"
+                android:textSize="50sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="-4.3sp"
+                android:text="분"
+                android:textColor="#2d2c45"
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/main_tv_time_sec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="75dp"
+                android:layout_marginStart="15dp"
                 android:fontFamily="@font/notosanskr_medium_hestia"
                 android:gravity="center_horizontal"
                 android:letterSpacing="-0.01"
@@ -145,7 +159,8 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/main_btn_alarmOn"
+            android:id="@+id/alarmOn"
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -158,7 +173,8 @@
 
 
         <Button
-            android:id="@+id/main_btn_alarmOff"
+            android:id="@+id/alarmOf"
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
