@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,7 +24,7 @@ public class Register extends Activity {
     private ImageView imageView3;
     private ImageView imageView4;
 
-
+    private ImageButton btn_back;
 
 
     @Override

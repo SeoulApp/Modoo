@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="12"
+    android:weightSum="11"
     tools:context="com.minsung.examples.MainActivity">
 
     <LinearLayout
@@ -14,24 +14,22 @@
         android:gravity="right|center"
         android:layout_weight="1">
 
-
         <ImageButton
             android:id="@+id/main_ib_ring"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
-
-            android:background="#FFFFFF"
-
+            android:background="@color/color_transparent"
             app:srcCompat="@drawable/ic_alarm" />
 
         <ImageButton
             android:id="@+id/main_ib_drawer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:layout_height="match_parent"
+            android:background="@color/color_transparent"
             android:layout_margin="10dp"
             app:srcCompat="@drawable/ic_drawer" />
+
     </LinearLayout>
 
     <RelativeLayout
@@ -50,7 +48,8 @@
             android:gravity="center_horizontal"
             android:text="빨간불입니다"
             android:fontFamily="@font/notosanskr_bold_hestia"
-            android:id="@+id/main_tv_msgTop"/>
+            android:id="@+id/main_tv_msgTop"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -170,37 +169,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/alarmOn"
-
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="알림 ON"
-            android:fontFamily="@font/notosanskr_bold_hestia"
-            android:textSize="20sp"
-            android:background="@drawable/main_btn_boarders"
-            android:backgroundTint="@color/color_btn_selected"
-            android:shadowColor="@color/color_btn_shadow" />
-
-
-        <Button
-            android:id="@+id/alarmOf"
-
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="알림 OFF"
-            android:fontFamily="@font/notosanskr_bold_hestia"
-            android:textSize="20sp"
-            android:background="@drawable/main_btn_boarders"
-            android:backgroundTint="@color/color_btn_not_selected" />
-    </LinearLayout>
 
 </LinearLayout>

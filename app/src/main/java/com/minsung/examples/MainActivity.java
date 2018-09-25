@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.minsung.examples.Info.InfoMain;
-import com.minsung.examples.Tutorial.tutorial;
 
 import java.util.Locale;
 
@@ -58,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
         tv_light = (TextView) findViewById(R.id.main_tv_msgTop);
         tv_light_detail = (TextView) findViewById(R.id.main_tv_msgBottom);
         ib_drawer = (ImageButton) findViewById(R.id.main_ib_drawer);
-//        btn_alarmOn = (Button) findViewById(R.id.main_btn_alarmOn);
-//        btn_alarmOff = (Button) findViewById(R.id.main_btn_alarmOff);
+
         pb_progress = (ProgressBar) findViewById(R.id.main_pb_progress);
         test_btn_sign = findViewById(R.id.main_iv_sign);
 

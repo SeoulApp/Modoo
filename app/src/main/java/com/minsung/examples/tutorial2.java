@@ -17,8 +17,8 @@ public class tutorial2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial_2);
 
-        imageView = (ImageView)findViewById(R.id.imageView1);
-        imageView.setImageResource(R.drawable.ic_red_light);
+        //imageView = (ImageView)findViewById(R.id.imageView1);
+       // imageView.setImageResource(R.drawable.ic_red_light);
 
         button = (Button) findViewById(R.id.button4);
 
