@@ -50,9 +50,6 @@ public class RegisterNumber extends Activity {
         final String t = Database.getBounusTime();
 
 
-
-
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,8 +61,10 @@ public class RegisterNumber extends Activity {
                 editor.putString("N",n_);
                 editor.putString("G",g);
                 editor.putString("T",t);
+                editor.putString("Auth","true");
                 editor.commit();
                 Database.setUserName(n_);
+                Database.setAuth(true);
                 Toast.makeText(context,"변경이 완료되었습니다.",Toast.LENGTH_SHORT).show();
                 finish();
 

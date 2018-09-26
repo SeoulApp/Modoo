@@ -7,38 +7,41 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.minsung.examples.Data.Database;
+import com.minsung.examples.Info.Register;
+import com.minsung.examples.MainActivity;
 import com.minsung.examples.R;
 
 public class tutorial2 extends Activity {
 
     private ImageView imageView;
-
-    private Button btn_next;
-    private Button btn_back;
+    private Button button;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial_2);
 
-        //imageView = (ImageView)findViewById(R.id.imageView1);
-        //imageView.setImageResource(R.drawable.ic_red_light);
+        imageView = (ImageView)findViewById(R.id.imageView1);
+        imageView.setImageResource(R.drawable.ic_red_light);
 
-        btn_back = (Button) findViewById(R.id.tutorial2_btn_back);
-        btn_next = (Button) findViewById(R.id.tutorial2_btn_next);
+        button = (Button) findViewById(R.id.button4);
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        final Intent intent = new Intent(this,MainActivity.class);
+        final Intent intent2 = new Intent(this,Register.class);
 
-        btn_next.setOnClickListener(new View.OnClickListener() {
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(tutorial2.this,tutorial3.class);
-                startActivity(intent);
+                if (!Database.isAuth()){
+                    startActivity(intent2);
+                }
+                else{
+                    startActivity(intent);
+
+                }
+
             }
         });
 

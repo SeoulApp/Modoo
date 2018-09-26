@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.minsung.examples.Data.Database;
+import com.minsung.examples.Info.Register;
 import com.minsung.examples.Tutorial.tutorial;
 
 public class SplashActivity extends Activity {
@@ -19,11 +20,8 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
-
         sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
         editor = sharedPreferences.edit();
-
 
         String s = (sharedPreferences.getString("S","NULL"));
         String v = (sharedPreferences.getString("V","NULL"));
@@ -31,15 +29,18 @@ public class SplashActivity extends Activity {
         String n = sharedPreferences.getString("N","NULL");
         String g = sharedPreferences.getString("G","NULL");
         String t = sharedPreferences.getString("T","NULL");
+        String Auth = sharedPreferences.getString("Auth","NULL");
+        String Tutorial = sharedPreferences.getString("Tutorial","NULL");;
 
         if (s.equals("NULL")){
-
             editor.putString("S","ture");
             editor.putString("V","ture");
             editor.putString("P","ture");
             editor.putString("N","홍길동");
             editor.putString("G","4급");
             editor.putString("T","3초");
+            editor.putString("Auth","ture");
+            editor.putString("Tutorial","false");
             editor.commit();
         }
         else{
@@ -49,22 +50,25 @@ public class SplashActivity extends Activity {
             Database.setUserName(n);
             Database.setUserGrade(g);
             Database.setBounusTime(t);
+            Database.setTutorial(Boolean.valueOf(Tutorial));
+            Database.setAuth(Boolean.valueOf(Auth));
         }
-//
-//        public void removePreferencesAll(){
-//            editor.clear();
-//            editor.commit();
-//        }
+
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getBaseContext(),tutorial.class);
+                Intent intent = new Intent(getBaseContext(),MainActivity.class);
+                if (Database.isTutorial()){
+                    intent = new Intent(getBaseContext(),tutorial.class);
+                }
+                else if(!Database.isAuth()){
+                    intent = new Intent(getBaseContext(),Register.class); ;
+                }
                 startActivity(intent);
                 finish();
             }
         },2000);
-
     }
 }
