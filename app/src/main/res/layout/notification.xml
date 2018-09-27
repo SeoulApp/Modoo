@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/TextAppearance.Compat.Notification.Info"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="70dp"
     android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
         android:id="@+id/noti_iv_light"
-        android:src="@drawable/ic_green_light"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
         android:scaleType="centerCrop"
-        android:padding="5dp"/>
+        android:src="@drawable/ic_green_light" />
 
 
     <LinearLayout
@@ -22,97 +24,66 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:text="@string/str_green_light2"
-                android:textSize="30sp"
+                android:id="@+id/noti_tv_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/noti_tv_light"
                 android:fontFamily="@font/notosanskr_medium_hestia"
+                android:gravity="center_vertical"
                 android:maxLines="1"
-                android:gravity="center_vertical"/>
+                android:text="@string/str_green_light2"
+                android:textSize="20dp" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_alarm"
-                android:background="@color/color_transparent"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="15dp"
+                android:background="@color/color_transparent"
+                android:src="@drawable/ic_alarm" />
 
         </RelativeLayout>
 
-        <TextView
-            android:text="@string/str_green_detail"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/noti_tv_detail"
-            android:fontFamily="@font/notosanskr_regular_hestia"
-            android:maxLines="1"
-            android:layout_weight="2"
-            android:textColor="@color/color_detail"
-            android:gravity="top"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/line_delimiter"/>
+            android:src="@drawable/line_delimiter" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/str_time_left"
-            android:textSize="15sp"
-            android:fontFamily="@font/notosanskr_regular_hestia"/>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:layout_marginEnd="15dp">
+            android:layout_marginEnd="15dp"
+            android:gravity="end">
 
-            <TextView
-                android:id="@+id/noti_tv_time_sec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_medium_hestia"
-                android:letterSpacing="-0.01"
-                android:lineSpacingExtra="-7.7sp"
-                android:text="0"
-                android:textColor="#2d2c45"
-                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_medium_hestia"
-                android:layout_toRightOf="@id/noti_tv_time_sec"
-                android:letterSpacing="-0.01"
-                android:lineSpacingExtra="-4.3sp"
-                android:text="초"
-                android:textColor="#2d2c45"
-                android:textSize="30sp" />
+                <ProgressBar
+                    android:id="@+id/noti_pb_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.5"
+                    android:paddingEnd="15dp" />
+
+
+            </LinearLayout>
 
         </RelativeLayout>
 
-        <ProgressBar
-            android:id="@+id/noti_pb_progress"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:paddingEnd="15dp" />
+       \
 
     </LinearLayout>
-
-
-
-
 
 
 </LinearLayout>

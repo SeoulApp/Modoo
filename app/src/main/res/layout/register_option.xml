@@ -1,107 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="11">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:weightSum="3"
         android:orientation="vertical">
-
-        <ImageButton
-            android:id="@+id/register_option_ib_back"
-            android:background="@color/color_transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:src="@drawable/ic_back"/>
-
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:orientation="vertical"
-            android:gravity="bottom">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:background="#FFFFFF"
+                android:textSize="30dp"
+                android:gravity="left"
+                android:text="←" />
 
             <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/textView40"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="인증방법 선택"
-                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:textSize="30dp"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                />
 
             <TextView
+                android:layout_marginLeft="30dp"
+                android:id="@+id/textView41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="보행장애 인증 방법을 선택하세요"
-                android:fontFamily="@font/notosanskr_light_hestia"/>
+                android:text="보행장애 인증 방법을 선택하세요" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/line1"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="bottom"
+            android:background="@drawable/up_down_border"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView42"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카드촬영"
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="복지카드 혹은 주민등록증을 촬영" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line2"
+            android:padding="20dp"
+            android:layout_weight="1.2"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="직접입력"
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="주민등록번호를 입력합니다" />
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/line1"
-        android:padding="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:gravity="bottom"
-        android:background="@drawable/up_down_border"
-        android:clickable="true"
-        android:orientation="vertical"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:id="@+id/textView42"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="카드촬영"
-            android:textSize="20dp"
-            android:textColor="#000000"
-
-            />
-
-        <TextView
-            android:id="@+id/textView43"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="복지카드 혹은 주민등록증을 촬영" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/line2"
-        android:padding="20dp"
-        android:layout_weight="4"
-        android:gravity="bottom"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:clickable="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView44"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="직접입력"
-            android:textSize="20dp"
-            android:textColor="#000000"
-
-            />
-
-        <TextView
-            android:id="@+id/textView45"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="주민등록번호를 입력합니다" />
-    </LinearLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

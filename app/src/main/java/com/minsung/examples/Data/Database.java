@@ -1,6 +1,8 @@
 package com.minsung.examples.Data;
 
 public class Database {
+    static private boolean Tutorial = true;
+    static private boolean Auth = false;
     static private boolean AlarmSound = true;
     static private boolean AlarmbVibration = true;
     static private boolean AlarmPush = true;
@@ -8,7 +10,21 @@ public class Database {
     static private String UserGrade = "4급";
     static private String BounusTime = "3초";
 
+    public static boolean isTutorial() {
+        return Tutorial;
+    }
 
+    public static void setTutorial(boolean tutorial) {
+        Tutorial = tutorial;
+    }
+
+    public static boolean isAuth() {
+        return Auth;
+    }
+
+    public static void setAuth(boolean auth) {
+        Auth = auth;
+    }
 
     public static boolean isAlarmSound() {
         return AlarmSound;

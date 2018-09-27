@@ -1,171 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="12"
-    tools:context="com.minsung.examples.tutorial2">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/tutorial2_tv_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/notosanskr_light_hestia"
-            android:gravity="center"
-            android:letterSpacing="-0.04"
-            android:lineSpacingExtra="0sp"
-            android:text="흐릿하게 보이는 신호등"
-            android:textColor="@color/color_tutorial"
-            android:textSize="30sp" />
-
-        <LinearLayout
-            android:id="@+id/tutorial2_tv_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tutorial2_tv_top"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular_hestia"
-                android:text="진동"
-                android:textColor="@color/color_tutorial"
-                android:textSize="30sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_light_hestia"
-                android:text="과"
-                android:textColor="@color/color_tutorial"
-                android:textSize="30sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular_hestia"
-                android:text="소리 "
-                android:textColor="@color/color_tutorial"
-                android:textSize="30sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_light_hestia"
-                android:text="로 알려드려요"
-                android:textColor="@color/color_tutorial"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/tutorial2_tv_bottom"
-            android:layout_marginBottom="-60dp"
-            android:layout_marginStart="30dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_no_signal" />
-
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="0sp"
+            android:textSize="20dp"
+            android:text="건너가기엔 촉박한 시간" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="이젠 " />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="안전하게 " />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="건너가세요 !" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="17.3dp"
+
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="65dp"
             android:gravity="center"
             android:letterSpacing="-0.07"
             android:lineSpacingExtra="0sp"
             android:textColor="#71747b"
-            android:textSize="20sp"
-            android:fontFamily="@font/notosanskr_medium_hestia"
-            android:text="시각장애・색맹・노인" />
+            android:textSize="15dp"
+            android:text="보행장애・고령자・임신・다리 부상 " />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:letterSpacing="-0.07"
             android:lineSpacingExtra="-0.3dp"
             android:textColor="#868b97"
-            android:textSize="18sp"
-            android:fontFamily="@font/notosanskr_light_hestia"
-            android:text="흐릿흐릿 어려운 신호확인," />
+            android:textSize="15dp"
+            android:text="성인 남성에 맞춰진 너무 짧은 보행 시간," />
 
         <TextView
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:textColor="#868b97"
-            android:textSize="18sp"
-            android:fontFamily="@font/notosanskr_light_hestia"
-            android:text="모두의 신호등이 도와드릴게요." />
+            android:text="각자 상황에 맞게 늘려드릴게요." />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_tutorial_2"
-            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:gravity="bottom"
 
-        <Button
-            android:id="@+id/tutorial2_btn_back"
+        android:orientation="vertical">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/main_btn_boarders"
-            android:backgroundTint="@color/color_white"
-            android:fontFamily="@font/notosanskr_bold_hestia"
-            android:text="이전" />
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
 
-        <Button
-            android:id="@+id/tutorial2_btn_next"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/main_btn_boarders"
-            android:backgroundTint="@color/color_white"
-            android:fontFamily="@font/notosanskr_bold_hestia"
-            android:text="다음" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@drawable/main_btn_boarders"
+                android:text="이전" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@drawable/main_btn_boarders"
+                android:text="시작" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

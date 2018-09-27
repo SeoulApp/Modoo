@@ -1,12 +1,24 @@
 package com.minsung.examples;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -14,10 +26,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.minsung.examples.Data.Database;
 import com.minsung.examples.Info.InfoMain;
+import com.minsung.examples.Info.Register;
+import com.minsung.examples.Tutorial.tutorial;
 
 import java.util.Locale;
 
@@ -57,16 +73,16 @@ public class MainActivity extends AppCompatActivity {
         tv_light = (TextView) findViewById(R.id.main_tv_msgTop);
         tv_light_detail = (TextView) findViewById(R.id.main_tv_msgBottom);
         ib_drawer = (ImageButton) findViewById(R.id.main_ib_drawer);
-
         pb_progress = (ProgressBar) findViewById(R.id.main_pb_progress);
         test_btn_sign = findViewById(R.id.main_iv_sign);
 
+        Intent intent1 = new Intent(this, Register.class);
 
         setDefault();
         test();
 
 
-        Permission permission = new Permission(getApplicationContext(),this);
+        Permission permission = new Permission(getApplicationContext(), this);
         permission.checkPermission();
 
         final Intent intent = new Intent(this, InfoMain.class);
@@ -74,9 +90,117 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intent);
+
             }
         });
+
+//        com.minsung.examples.Noticication.Notification notification = new com.minsung.examples.Noticication.Notification();
+//        notification.noti(this.getApplicationContext(),MainActivity.class);
+
+
+
+
+
+        String channelId = "channel";
+        String channelName = "Channel Name";
+
+        NotificationManager notifManager
+                = (NotificationManager) getSystemService  (Context.NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+
+            NotificationChannel mChannel = new NotificationChannel(
+                    channelId, channelName, importance);
+
+            notifManager.createNotificationChannel(mChannel);
+
+        }
+
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(getApplicationContext(), channelId);
+
+        Intent notificationIntent = new Intent(getApplicationContext()
+                , MainActivity.class);
+
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+        int requestID = (int) System.currentTimeMillis();
+
+        PendingIntent pendingIntent
+                = PendingIntent.getActivity(getApplicationContext()
+                , requestID
+                , notificationIntent
+                , PendingIntent.FLAG_UPDATE_CURRENT);
+
+        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notification);
+        remoteViews.setTextViewText(R.id.noti_tv_light,"초록불");
+
+
+        builder.setContentTitle("Title") // required
+                .setContentText("Content")  // required
+                .setDefaults(Notification.DEFAULT_ALL) // 알림, 사운드 진동 설정
+                .setAutoCancel(true) // 알림 터치시 반응 후 삭제
+                .setSound(RingtoneManager
+                        .getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setSmallIcon(android.R.drawable.btn_star)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources()
+                        , R.drawable.group_7))
+                .setBadgeIconType(R.drawable.group_8)
+
+                        .setContent(remoteViews);
+
+
+
+
+//
+//        builder.setContent(remoteViews)
+//                .setContentIntent(createPendingIntent());
+//        builder.setContentIntent(createPendingIntent());
+//        builder.setAutoCancel(true)
+        notifManager.notify(0, builder.build());
+
+
+
+
+
+
+
     }
+    private PendingIntent createPendingIntent(){
+        Intent resultIntent = new Intent(this, MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addNextIntent(resultIntent);
+
+        return stackBuilder.getPendingIntent(
+                0,
+                PendingIntent.FLAG_UPDATE_CURRENT
+        );
+    }
+
+
+
+
+    public void notificationcall(){
+
+        int notify_id =1;
+
+
+
+        NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setContentTitle("Notify")
+                .setAutoCancel(true)
+                .setContentText("인터넷 연결이 끊겼습니다.");
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(notify_id, notificationBuilder.build());
+    }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int grantResults[]) {
@@ -180,8 +304,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -191,5 +313,11 @@ public class MainActivity extends AppCompatActivity {
             tts.shutdown();
             tts = null;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 }
