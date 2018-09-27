@@ -7,11 +7,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.media.RingtoneManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.VibrationEffect;
@@ -30,10 +27,8 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.minsung.examples.Data.Database;
 import com.minsung.examples.Info.InfoMain;
 import com.minsung.examples.Info.Register;
-import com.minsung.examples.Tutorial.tutorial;
 
 import java.util.Locale;
 
@@ -68,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         tv_time_left = (TextView) findViewById(R.id.main_tv_time_sec);
         tv_light = (TextView) findViewById(R.id.main_tv_msgTop);
         tv_light_detail = (TextView) findViewById(R.id.main_tv_msgBottom);

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.minsung.examples.R;
@@ -13,6 +14,8 @@ public class RegisterOption extends Activity {
 
     private LinearLayout linearLayout1;
     private LinearLayout linearLayout2;
+
+    private ImageButton btn_back;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class RegisterOption extends Activity {
 
         linearLayout1 = (LinearLayout) findViewById(R.id.line1); //카메라
         linearLayout2 = (LinearLayout) findViewById(R.id.line2); // 숫자
+        btn_back = (ImageButton) findViewById(R.id.register_option_ib_back);
 
         linearLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +47,12 @@ public class RegisterOption extends Activity {
         });
 
 
-
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
     }
 }

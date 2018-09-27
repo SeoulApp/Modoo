@@ -1,32 +1,8 @@
 //package com.minsung.examples.Noticication;
-//
-//import android.app.Activity;
-//import android.app.AlertDialog;
-//import android.app.NotificationChannel;
-//import android.app.NotificationManager;
-//import android.app.PendingIntent;
-//import android.app.Service;
-//import android.content.Context;
-//import android.content.Intent;
-//import android.graphics.BitmapFactory;
-//import android.media.RingtoneManager;
-//import android.net.Uri;
-//import android.os.Handler;
-//import android.os.IBinder;
-//import android.support.annotation.Nullable;
-//import android.support.v4.app.NotificationCompat;
-//import android.util.Log;
-//import android.widget.Toast;
-//
-//import com.minsung.examples.MainActivity;
-//import com.minsung.examples.R;
-//
-//import java.util.Calendar;
-//import java.util.Timer;
-//
-//import static android.content.Context.NOTIFICATION_SERVICE;
+
 //
 //public class Notification {
+
 //    public void noti(Context context  , Class c){
 //
 //        String channelId = "channel";

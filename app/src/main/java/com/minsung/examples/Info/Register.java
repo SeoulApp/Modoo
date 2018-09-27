@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.minsung.examples.Data.Database;
+import com.minsung.examples.MainActivity;
 import com.minsung.examples.R;
 
 public class Register extends Activity {
@@ -23,7 +25,7 @@ public class Register extends Activity {
     private ImageView imageView3;
     private ImageView imageView4;
 
-
+    private ImageButton btn_back;
 
 
     @Override
@@ -31,6 +33,7 @@ public class Register extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+
 
         final Intent intent = new Intent(this,RegisterOption.class);
 
@@ -49,6 +52,14 @@ public class Register extends Activity {
         imageView3.setImageResource(R.drawable.group_9);
         imageView4.setImageResource(R.drawable.group_10);
 
+        btn_back = findViewById(R.id.register_ib_back);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         linearLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,5 +97,12 @@ public class Register extends Activity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
