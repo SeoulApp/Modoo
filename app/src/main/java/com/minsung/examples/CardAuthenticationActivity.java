@@ -5,9 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 
 public class CardAuthenticationActivity extends AppCompatActivity {
 
+    CardAuthenticationActivity cardAuthenticationActivity ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_authentication);
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
