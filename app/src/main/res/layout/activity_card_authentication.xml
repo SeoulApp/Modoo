@@ -5,7 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.minsung.examples.CardAuthenticationActivity">
 
-
+    <org.opencv.android.JavaCameraView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/activity_surface_view" />
 
     <ImageButton
         android:layout_width="wrap_content"

@@ -6,36 +6,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="4"
+        android:weightSum="5"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button12"
+        <ImageButton
+            android:id="@+id/register_option_ib_back"
+            android:background="@color/color_transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_back"/>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
-            android:background="#FFFFFF"
-            android:textSize="30dp"
-            android:gravity="left|center"
-            android:text="←" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView38"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:textColor="#000000"
-            android:layout_marginLeft="30dp"
-            android:text="번호 직접 입력" />
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/notosanskr_medium_hestia"
+                android:text="번호 직접 입력"
+                android:textColor="#000000"
+                android:textSize="30dp" />
 
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_marginTop="7dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/notosanskr_medium_hestia"
 
-            android:text="성명 및 주민등록번호를 입력해주세요" />
+                android:text="성명 및 주민등록번호를 입력해주세요" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/notosanskr_medium_hestia"
                 android:inputType="textPersonName"
                 android:hint="성명" />
 
@@ -63,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/notosanskr_medium_hestia"
                 android:inputType="textPersonName"
                 android:hint="주민등록번호" />
 
@@ -77,7 +89,10 @@
                     android:id="@+id/button14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_medium_hestia"
                     android:background="#FFFFFF"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
                     android:text="확인" />
             </LinearLayout>
 
