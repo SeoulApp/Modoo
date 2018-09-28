@@ -27,6 +27,7 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.minsung.examples.Data.Database;
 import com.minsung.examples.Info.InfoMain;
 import com.minsung.examples.Info.Register;
 
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
         setDefault();
         test();
+
+        Log.d("SSSSSSSS", Database.getOption());
+
+
 
 
         Permission permission = new Permission(getApplicationContext(), this);

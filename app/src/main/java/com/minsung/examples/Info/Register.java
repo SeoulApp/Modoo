@@ -64,35 +64,43 @@ public class Register extends Activity {
         linearLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent.putExtra("STATUS","1");
+                Database.setOption("1");
                 Database.setUserGrade("장애인");
+                Database.setBounusTimeString("7초");
                 startActivity(intent);
+                finish();
             }
         });
         linearLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent.putExtra("STATUS","2");
+                Database.setOption("2");
                 Database.setUserGrade("고령자");
+                Database.setBounusTimeString("6초");
                 startActivity(intent);
+                finish();
 
             }
         });
         linearLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent.putExtra("STATUS","3");
+                Database.setOption("3");
                 Database.setUserGrade("임산부");
+                Database.setBounusTimeString("5초");
                 startActivity(intent);
+                finish();
 
             }
         });
         linearLayout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent.putExtra("STATUS","4");
+                Database.setOption("4");
                 Database.setUserGrade("다리 부상");
+                Database.setBounusTimeString("4초");
                 startActivity(intent);
+                finish();
 
             }
         });

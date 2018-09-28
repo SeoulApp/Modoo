@@ -2,13 +2,32 @@ package com.minsung.examples.Data;
 
 public class Database {
     static private boolean Tutorial = true;
-    static private boolean Auth = false;
     static private boolean AlarmSound = true;
     static private boolean AlarmbVibration = true;
+    static private boolean BounusTimeBool = true;
+
+    static private boolean Auth = false;
     static private boolean AlarmPush = true;
     static private String UserName = "홍길동";
     static private String UserGrade = "4급";
-    static private String BounusTime = "3초";
+    static private String BounusTimeString = "3초";
+    static private String Option = "0";
+
+    public static boolean isBounusTimeBool() {
+        return BounusTimeBool;
+    }
+
+    public static void setBounusTimeBool(boolean bounusTimeBool) {
+        BounusTimeBool = bounusTimeBool;
+    }
+
+    public static String getOption() {
+        return Option;
+    }
+
+    public static void setOption(String option) {
+        Option = option;
+    }
 
     public static boolean isTutorial() {
         return Tutorial;
@@ -66,11 +85,11 @@ public class Database {
         UserGrade = userGrade;
     }
 
-    public static String getBounusTime() {
-        return BounusTime;
+    public static String getBounusTimeString() {
+        return BounusTimeString;
     }
 
-    public static void setBounusTime(String bounusTime) {
-        BounusTime = bounusTime;
+    public static void setBounusTimeString(String bounusTime) {
+        BounusTimeString = bounusTime;
     }
 }

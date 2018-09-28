@@ -15,6 +15,7 @@ public class SplashActivity extends Activity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +31,27 @@ public class SplashActivity extends Activity {
         String g = sharedPreferences.getString("G","NULL");
         String t = sharedPreferences.getString("T","NULL");
         String Auth = sharedPreferences.getString("Auth","NULL");
-        String Tutorial = sharedPreferences.getString("Tutorial","NULL");;
+        String Tutorial = sharedPreferences.getString("Tutorial","NULL");
+        String Option = sharedPreferences.getString("Option","NULL");
+        String Bonus = sharedPreferences.getString("Bonus","NULL");
 
         if (s.equals("NULL")){
-            editor.putString("S","ture");
-            editor.putString("V","ture");
-            editor.putString("P","ture");
+            editor.putString("S","true");
+            editor.putString("V","true");
+            editor.putString("P","true");
             editor.putString("N","홍길동");
             editor.putString("G","4급");
             editor.putString("T","3초");
-            editor.putString("Auth","ture");
+            editor.putString("Auth","true");
             editor.putString("Tutorial","false");
+            editor.putString("Option","0");
+            editor.putString("Bonus","true");
+
+
             editor.commit();
+
+
+
         }
         else{
             Database.setAlarmSound(Boolean.valueOf(s));
@@ -49,9 +59,11 @@ public class SplashActivity extends Activity {
             Database.setAlarmPush(Boolean.valueOf(p));
             Database.setUserName(n);
             Database.setUserGrade(g);
-            Database.setBounusTime(t);
+            Database.setBounusTimeString(t);
             Database.setTutorial(Boolean.valueOf(Tutorial));
             Database.setAuth(Boolean.valueOf(Auth));
+            Database.setOption(Option);
+            Database.setBounusTimeBool(Boolean.valueOf(Bonus));
         }
 
 

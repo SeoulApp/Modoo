@@ -14,7 +14,6 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.minsung.examples.MainActivity;
 import com.minsung.examples.R;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -54,7 +53,7 @@ public class RegisterCamera extends Activity implements CameraBridgeViewBase.CvC
 
     };
 //
-//
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

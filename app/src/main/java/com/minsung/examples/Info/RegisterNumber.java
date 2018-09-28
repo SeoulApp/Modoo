@@ -47,7 +47,7 @@ public class RegisterNumber extends Activity {
         final String p = String.valueOf(Database.isAlarmPush());
         final String n = Database.getUserName();
         final String g = Database.getUserGrade();
-        final String t = Database.getBounusTime();
+        final String t = Database.getBounusTimeString();
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,7 @@ public class RegisterNumber extends Activity {
             public void onClick(View view) {
                 final String n_ = name.getText().toString();
                 final String number_ = number.getText().toString();
+
                 editor.putString("S",s);
                 editor.putString("V",v);
                 editor.putString("P",p);
@@ -62,6 +63,7 @@ public class RegisterNumber extends Activity {
                 editor.putString("G",g);
                 editor.putString("T",t);
                 editor.putString("Auth","true");
+                editor.putString("Option",Database.getOption());
                 editor.commit();
                 Database.setUserName(n_);
                 Database.setAuth(true);

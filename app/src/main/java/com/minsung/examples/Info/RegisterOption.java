@@ -34,6 +34,7 @@ public class RegisterOption extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(intent1);
+                finish();
 
 
             }
@@ -43,6 +44,7 @@ public class RegisterOption extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(intent2);
+                finish();
             }
         });
 
