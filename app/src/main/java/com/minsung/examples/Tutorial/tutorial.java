@@ -26,9 +26,8 @@ public class tutorial extends Activity{
             @Override
             public void onClick(View v) {
                 startActivity(intent);
+                finish();
             }
         });
-
-
     }
 }

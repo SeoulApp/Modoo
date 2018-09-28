@@ -15,7 +15,6 @@ public class SplashActivity extends Activity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +41,10 @@ public class SplashActivity extends Activity {
             editor.putString("N","홍길동");
             editor.putString("G","4급");
             editor.putString("T","3초");
-            editor.putString("Auth","true");
-            editor.putString("Tutorial","false");
+            editor.putString("Auth","false");
+            editor.putString("Tutorial","true");
             editor.putString("Option","0");
             editor.putString("Bonus","true");
-
-
             editor.commit();
 
 
@@ -76,7 +73,7 @@ public class SplashActivity extends Activity {
                     intent = new Intent(getBaseContext(),tutorial.class);
                 }
                 else if(!Database.isAuth()){
-                    intent = new Intent(getBaseContext(),Register.class); ;
+                    intent = new Intent(getBaseContext(),Register.class);
                 }
                 startActivity(intent);
                 finish();

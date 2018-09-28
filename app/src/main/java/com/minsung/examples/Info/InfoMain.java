@@ -48,7 +48,7 @@ public class InfoMain extends Activity {
         name = (TextView)findViewById(R.id.name);
         grade = (TextView)findViewById(R.id.grade);
         bonus = (TextView)findViewById(R.id.bonus);
-        imageView = (ImageView)findViewById(R.id.imageView2);
+      //  imageView = (ImageView)findViewById(R.id.imageView2);
         Ok = (Button)findViewById(R.id.button8);
         Back = (ImageButton)findViewById(R.id.register_option_ib_back);
         Info = (ImageButton)findViewById(R.id.info);
@@ -61,8 +61,6 @@ public class InfoMain extends Activity {
 
         sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
         editor = sharedPreferences.edit();
-
-        final Intent intent1 = new Intent(this,InfoResult.class);
 
 
         imagesrc = 0;
@@ -83,10 +81,13 @@ public class InfoMain extends Activity {
                     imagesrc = R.drawable.ic_tutorial_1;
                     break;
         }
+
+
+
         name.setText(Database.getUserName());
         grade.setText(Database.getUserGrade());
         bonus.setText(Database.getBounusTimeString());
-        imageView.setImageResource(imagesrc);
+        Info.setImageResource(imagesrc);
 
         aSwitch1.setChecked(Database.isBounusTimeBool());
         aSwitch2.setChecked(Database.isAlarmbVibration());
@@ -130,6 +131,8 @@ public class InfoMain extends Activity {
         Info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent1 = new Intent(getApplicationContext(),InfoResult.class);
+                intent1.putExtra("Img",imagesrc);
                 startActivity(intent1);
             }
         });
@@ -176,7 +179,9 @@ public class InfoMain extends Activity {
                 break;
         }
 
-        imageView.setImageResource(imagesrc);
+
+        Info.setImageResource(imagesrc);
+
     }
 
 

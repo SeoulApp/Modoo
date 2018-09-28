@@ -30,7 +30,9 @@ public class tutorial2 extends Activity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                Intent intent = new Intent(tutorial2.this,tutorial.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -39,6 +41,7 @@ public class tutorial2 extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(tutorial2.this,tutorial3.class);
                 startActivity(intent);
+                finish();
             }
         });
 

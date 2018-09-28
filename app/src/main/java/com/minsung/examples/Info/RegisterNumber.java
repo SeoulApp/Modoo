@@ -2,6 +2,7 @@ package com.minsung.examples.Info;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.minsung.examples.Data.Database;
+import com.minsung.examples.MainActivity;
 import com.minsung.examples.R;
 
 public class RegisterNumber extends Activity {
@@ -23,6 +25,7 @@ public class RegisterNumber extends Activity {
     private Context context;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    private  Intent intent;
 
 
 
@@ -65,15 +68,21 @@ public class RegisterNumber extends Activity {
                 editor.putString("Auth","true");
                 editor.putString("Option",Database.getOption());
                 editor.commit();
-                Database.setUserName(n_);
-                Database.setAuth(true);
-                Toast.makeText(context,"변경이 완료되었습니다.",Toast.LENGTH_SHORT).show();
-                finish();
 
+                if (!Database.isAuth()){
+                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Database.setUserName(n_);
+                    Database.setAuth(true);
+                    startActivity(intent);
+                    Toast.makeText(context,"변경이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else{
+                    Database.setUserName(n_);
+                    Toast.makeText(context,"변경이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         });
-
-
-
     }
 }
