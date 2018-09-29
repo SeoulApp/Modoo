@@ -9,14 +9,23 @@
         android:weightSum="5"
         android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/register_option_ib_back"
-            android:background="@color/color_transparent"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_back"/>
+            android:gravity="left"
+
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/register_option_ib_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+
+                android:background="@color/color_transparent"
+                android:src="@drawable/ic_back" />
+        </LinearLayout>
 
 
         <LinearLayout

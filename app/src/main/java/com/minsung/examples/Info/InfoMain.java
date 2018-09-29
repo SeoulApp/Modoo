@@ -49,8 +49,8 @@ public class InfoMain extends Activity {
         grade = (TextView)findViewById(R.id.grade);
         bonus = (TextView)findViewById(R.id.bonus);
       //  imageView = (ImageView)findViewById(R.id.imageView2);
-        Ok = (Button)findViewById(R.id.button8);
-        Back = (ImageButton)findViewById(R.id.register_option_ib_back);
+        Ok = (Button)findViewById(R.id.button4);
+        Back = (ImageButton)findViewById(R.id.register_option_ib_back2);
         Info = (ImageButton)findViewById(R.id.info);
 
         aSwitch1 = (Switch)findViewById(R.id.switch1); // 시간추가

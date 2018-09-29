@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class RegisterNumber extends Activity {
     private EditText name;
     private EditText number;
     private Context context;
+    private ImageButton Back;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private  Intent intent;
@@ -43,6 +45,7 @@ public class RegisterNumber extends Activity {
         button = (Button)findViewById(R.id.button14);
         name = (EditText)findViewById(R.id.editText2);
         number = (EditText)findViewById(R.id.editText3);
+        Back = (ImageButton)findViewById(R.id.register_option_ib_back);
 
 
         final String s = String.valueOf(Database.isAlarmSound());
@@ -84,5 +87,14 @@ public class RegisterNumber extends Activity {
                 }
             }
         });
+
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
     }
 }

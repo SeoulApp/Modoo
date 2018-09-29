@@ -15,6 +15,7 @@ public class SplashActivity extends Activity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class SplashActivity extends Activity {
         String Tutorial = sharedPreferences.getString("Tutorial","NULL");
         String Option = sharedPreferences.getString("Option","NULL");
         String Bonus = sharedPreferences.getString("Bonus","NULL");
+        String Total = sharedPreferences.getString("Total","NULL");
 
         if (s.equals("NULL")){
             editor.putString("S","true");
@@ -45,6 +47,7 @@ public class SplashActivity extends Activity {
             editor.putString("Tutorial","true");
             editor.putString("Option","0");
             editor.putString("Bonus","true");
+            editor.putString("Total","true");
             editor.commit();
 
 
@@ -61,6 +64,7 @@ public class SplashActivity extends Activity {
             Database.setAuth(Boolean.valueOf(Auth));
             Database.setOption(Option);
             Database.setBounusTimeBool(Boolean.valueOf(Bonus));
+            Database.setTotalAlarm(Boolean.valueOf(Total));
         }
 
 

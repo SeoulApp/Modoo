@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
@@ -40,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
     private static final int VIBRATE_ON = 1;
     private static final int VIBRATE_OFF = 0;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
+
+
+
 
     private TextView tv_light;
     private TextView tv_light_detail;
@@ -49,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_alarmOff;
     private ProgressBar pb_progress;
     private ImageView test_btn_sign;
+    private ImageButton Ring;
 
     private CountDownTimer timer;
     private Vibrator vibrator;
@@ -70,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         ib_drawer = (ImageButton) findViewById(R.id.main_ib_drawer);
         pb_progress = (ProgressBar) findViewById(R.id.main_pb_progress);
         test_btn_sign = findViewById(R.id.main_iv_sign);
+        Ring = (ImageButton)findViewById(R.id.main_ib_ring);
 
         Intent intent1 = new Intent(this, Register.class);
 
@@ -78,6 +87,19 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("SSSSSSSS", Database.getOption());
 
+        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        int imgsrc = 0;
+
+        if (Database.isTotalAlarm()){
+            imgsrc = R.drawable.ic_alarm;
+        }
+        else{
+            imgsrc = R.drawable.group;
+        }
+
+        Ring.setImageResource(imgsrc);
 
 
 
@@ -162,6 +184,44 @@ public class MainActivity extends AppCompatActivity {
         notifManager.notify(0, builder.build());
 
 
+        Ring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Database.isTotalAlarm()){
+
+                    Database.setAlarmSound(false);
+                    Database.setAlarmbVibration(false);
+                    Database.setAlarmPush(false);
+                    Database.setTotalAlarm(false);
+                }
+                else{
+                    Database.setAlarmSound(true);
+                    Database.setAlarmbVibration(true);
+                    Database.setAlarmPush(true);
+                    Database.setTotalAlarm(true);
+                }
+
+                editor.putString("V",String.valueOf(Database.isAlarmbVibration()));
+                editor.putString("S",String.valueOf(Database.isAlarmSound()));
+                editor.putString("P",String.valueOf(Database.isAlarmPush()));
+                editor.putString("Total",String.valueOf(Database.isTotalAlarm()));
+                editor.commit();
+
+                int imgsrc = 0;
+
+                if (Database.isTotalAlarm()){
+                    imgsrc = R.drawable.ic_alarm;
+                }
+                else{
+                    imgsrc = R.drawable.group;
+                }
+
+                Ring.setImageResource(imgsrc);
+
+            }
+        });
+
+
 
 
 
@@ -198,6 +258,10 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(notify_id, notificationBuilder.build());
     }
+
+
+
+
 
 
 

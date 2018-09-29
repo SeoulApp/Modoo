@@ -109,6 +109,8 @@ public class Register extends Activity {
 
     @Override
     public void onBackPressed() {
+        final Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
         finish();
     }
 }

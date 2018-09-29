@@ -5,6 +5,7 @@ public class Database {
     static private boolean AlarmSound = true;
     static private boolean AlarmbVibration = true;
     static private boolean BounusTimeBool = true;
+    static private boolean TotalAlarm = true;
 
     static private boolean Auth = false;
     static private boolean AlarmPush = true;
@@ -12,6 +13,14 @@ public class Database {
     static private String UserGrade = "4급";
     static private String BounusTimeString = "3초";
     static private String Option = "0";
+
+    public static boolean isTotalAlarm() {
+        return TotalAlarm;
+    }
+
+    public static void setTotalAlarm(boolean totalAlarm) {
+        TotalAlarm = totalAlarm;
+    }
 
     public static boolean isBounusTimeBool() {
         return BounusTimeBool;
