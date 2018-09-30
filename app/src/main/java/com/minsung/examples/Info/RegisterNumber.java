@@ -68,6 +68,14 @@ public class RegisterNumber extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (name.getText().toString().equals("")){
+                    Toast.makeText(context,"이름을 입력해주세요.",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+
                 final String n_ = name.getText().toString();
                 final String number_ = number.getText().toString();
 
