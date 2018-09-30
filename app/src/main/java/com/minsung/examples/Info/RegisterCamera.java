@@ -18,14 +18,16 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.minsung.examples.R;
 public class RegisterCamera extends Activity {
 
-    private Button button;
+    private ImageButton back;
     private ImageView imageView;
+
     private static final int MY_CAMERA_REQUEST_CODE = 100;
 
     private Intent intent10;
@@ -48,6 +50,17 @@ public class RegisterCamera extends Activity {
         grade = intent10.getStringExtra("Grade");
         time = intent10.getStringExtra("Time");
 
+        back = (ImageButton)findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),RegisterOption.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         imageView = (ImageView)findViewById(R.id.imageView8);
 
@@ -60,6 +73,9 @@ public class RegisterCamera extends Activity {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent,1);
                 }
+
+
+
             }
     @Override
 

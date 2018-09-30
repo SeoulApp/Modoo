@@ -109,6 +109,8 @@ public class RegisterNumber extends Activity {
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),RegisterOption.class);
+                startActivity(intent);
                 finish();
             }
         });
