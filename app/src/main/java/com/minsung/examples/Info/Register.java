@@ -72,7 +72,7 @@ public class Register extends Activity {
             public void onClick(View view) {
                 intent.putExtra("Option","1");
                 intent.putExtra("Grade","장애인");
-                intent.putExtra("Time","5초");
+                intent.putExtra("Time","5");
                 startActivity(intent);
                 finish();
             }
@@ -82,7 +82,7 @@ public class Register extends Activity {
             public void onClick(View view) {
                 intent.putExtra("Option","2");
                 intent.putExtra("Grade","고령자");
-                intent.putExtra("Time","7.5초");
+                intent.putExtra("Time","7.5");
                 startActivity(intent);
                 finish();
 
@@ -93,7 +93,7 @@ public class Register extends Activity {
             public void onClick(View view) {
                 intent.putExtra("Option","3");
                 intent.putExtra("Grade","임산부");
-                intent.putExtra("Time","2.5초");
+                intent.putExtra("Time","2.5");
                 startActivity(intent);
                 finish();
 
@@ -104,7 +104,7 @@ public class Register extends Activity {
             public void onClick(View view) {
                 intent.putExtra("Option","4");
                 intent.putExtra("Grade","다리 부상");
-                intent.putExtra("Time","5초");
+                intent.putExtra("Time","5");
                 startActivity(intent);
                 finish();
 
@@ -115,7 +115,7 @@ public class Register extends Activity {
             public void onClick(View view) {
                 intent.putExtra("Option","5");
                 intent.putExtra("Grade","어린이");
-                intent.putExtra("Time","5.8초");
+                intent.putExtra("Time","5.8");
                 startActivity(intent);
                 finish();
 
