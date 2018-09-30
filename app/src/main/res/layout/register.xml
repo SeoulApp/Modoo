@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="11">
+    android:weightSum="13">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="10"
         android:orientation="vertical">
 
         <LinearLayout
@@ -146,14 +146,61 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/option3"
-            android:layout_weight="2"
+            android:id="@+id/option5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:paddingStart="25dp"
+            android:clickable="true"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:paddingStart="20dp">
+
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular_hestia"
+                    android:text="어린이"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular_hestia"
+                    android:text="만 14세 이하"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/top_boundary"
             android:clickable="true"
             android:orientation="horizontal"
-            android:background="@drawable/top_boundary">
+            android:paddingStart="25dp">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -174,8 +221,8 @@
                     android:id="@+id/textView34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="임산부"
                     android:fontFamily="@font/notosanskr_regular_hestia"
+                    android:text="임산부"
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
@@ -183,28 +230,28 @@
                     android:id="@+id/textView35"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="임산확인증 소지자"
                     android:fontFamily="@font/notosanskr_regular_hestia"
+                    android:text="임산확인증 소지자"
                     android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/option4"
-            android:layout_weight="2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:paddingStart="25dp"
+            android:layout_weight="2"
+            android:background="@drawable/top_boundary"
             android:clickable="true"
             android:orientation="horizontal"
-            android:background="@drawable/top_boundary">
+            android:paddingStart="25dp">
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/ic_launcher"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                app:srcCompat="@mipmap/ic_launcher" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,8 +265,8 @@
                     android:id="@+id/textView36"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="다리 부상"
                     android:fontFamily="@font/notosanskr_regular_hestia"
+                    android:text="다리 부상"
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
@@ -227,11 +274,10 @@
                     android:id="@+id/textView37"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="보행 불편 부상 처방전 소지자"
                     android:fontFamily="@font/notosanskr_regular_hestia"
-                    android:textSize="15sp"/>
+                    android:text="보행 불편 부상 처방전 소지자"
+                    android:textSize="15sp" />
             </LinearLayout>
-
 
 
         </LinearLayout>

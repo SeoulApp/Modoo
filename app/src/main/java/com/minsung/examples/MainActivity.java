@@ -115,10 +115,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        com.minsung.examples.Noticication.Notification notification = new com.minsung.examples.Noticication.Notification();
-//        notification.noti(this.getApplicationContext(),MainActivity.class);
-
-
 
 
 

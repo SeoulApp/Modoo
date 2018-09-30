@@ -23,7 +23,7 @@ public class InfoResult extends Activity {
     private Button Ok;
     private ImageButton Back;
     private Intent intent;
-    private int imgsrc;
+    private int imagesrc;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,10 +39,34 @@ public class InfoResult extends Activity {
 
         intent = getIntent();
 
-        imgsrc = intent.getIntExtra("Img",0);
+        imagesrc =0;
+
+
+        switch (Database.getOption()){
+            case "1":
+                imagesrc = R.drawable.group_8;
+                break;
+            case "2":
+                imagesrc = R.drawable.group_7;
+                break;
+            case "3":
+                imagesrc = R.drawable.group_9;
+                break;
+            case "4":
+                imagesrc = R.drawable.group_10;
+                break;
+            case "5":
+                imagesrc = R.drawable.group_11;
+                break;
+            default:
+                imagesrc = R.drawable.ic_tutorial_1;
+                break;
+        }
+
+
         name.setText(Database.getUserName());
         bonus.setText(Database.getBounusTimeString());
-        imageView.setImageResource(imgsrc);
+        imageView.setImageResource(imagesrc);
 
         Ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +90,6 @@ public class InfoResult extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-
         name.setText(Database.getUserName());
         bonus.setText(Database.getBounusTimeString());
 

@@ -1,11 +1,15 @@
 package com.minsung.examples.Info;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -13,45 +17,25 @@ import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.minsung.examples.R;
+public class RegisterCamera extends Activity {
 
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.InstallCallbackInterface;
-import org.opencv.android.JavaCameraView;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
+    private Button button;
+    private ImageView imageView;
+    private static final int MY_CAMERA_REQUEST_CODE = 100;
 
-import static org.altbeacon.beacon.distance.CurveFittedDistanceCalculator.TAG;
-
-public class RegisterCamera extends Activity implements CameraBridgeViewBase.CvCameraViewListener2 {
-
-    //    private static final String TAG = "opencv";
-//
+    private Intent intent10;
 
 
-
-    JavaCameraView javaCameraView;
-    Mat mRgba;
-    BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
-        @Override
-        public void onManagerConnected(int status) {
-            switch (status){
-                case BaseLoaderCallback.SUCCESS:
-                    javaCameraView.enableView();
-                    break;
-
-                    default:
-                        super.onManagerConnected(status);
-                        break;
-            }
-        }
+    String option;
+    String grade;
+    String time;
 
 
-    };
 //
 
     @Override
@@ -59,63 +43,73 @@ public class RegisterCamera extends Activity implements CameraBridgeViewBase.CvC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_authentication);
 
-        javaCameraView = (JavaCameraView)findViewById(R.id.activity_surface_view);
-        javaCameraView.setVisibility(View.VISIBLE);
-        javaCameraView.setCvCameraViewListener(this);
+        intent10 = getIntent();
+        option = intent10.getStringExtra("Option");
+        grade = intent10.getStringExtra("Grade");
+        time = intent10.getStringExtra("Time");
 
-//
+
+        imageView = (ImageView)findViewById(R.id.imageView8);
+
+                if (checkSelfPermission(Manifest.permission.CAMERA)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.CAMERA},
+                            MY_CAMERA_REQUEST_CODE);
+                }
+                else {
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent,1);
+                }
+            }
+    @Override
+
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == MY_CAMERA_REQUEST_CODE) {
+
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+
+            } else {
+
+                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+
+            }
+
+        }
+    }
+
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        Bundle extras = data.getExtras();
+        Bitmap mImageBitmap = (Bitmap)extras.get("data");
+        imageView.setImageBitmap(mImageBitmap);
+        try {
+            Thread.sleep(2000);
+            Toast.makeText(this, "글자 인식을 실패하였습니다. 번호로 입력해주세요", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this,RegisterNumber.class);
+            intent.putExtra("Option",option);
+            intent.putExtra("Grade",grade);
+            intent.putExtra("Time",time);
+            startActivity(intent);
+            finish();
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
-//
-//
-//
 
-    @Override
-    public void onPause()
-    {
-        super.onPause();
-        if (javaCameraView != null)
-            javaCameraView.disableView();
-    }
 
-    @Override
-    public void onResume()
-    {
-        super.onResume();
 
-        if (!OpenCVLoader.initDebug()) {
-            Log.d(TAG, "onResume :: Internal OpenCV library not found.");
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
-        } else {
-            Log.d(TAG, "onResum :: OpenCV library found inside package. Using it!");
-            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
-        }
-    }
 
-    public void onDestroy() {
-        super.onDestroy();
-
-        if (javaCameraView != null)
-            javaCameraView.disableView();
-    }
-
-  //  public native String stringFromJNI();
-//
-    @Override
-    public void onCameraViewStarted(int width, int height) {
-        mRgba = new Mat(height,width, CvType.CV_8UC4);
 
     }
 
-    @Override
-    public void onCameraViewStopped() {
-        mRgba.release();
 
-    }
 
-    @Override
-    public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-        mRgba = inputFrame.rgba();
-        return mRgba;
-    }
 }

@@ -77,6 +77,9 @@ public class InfoMain extends Activity {
             case "4":
                 imagesrc = R.drawable.group_10;
                 break;
+            case "5":
+                imagesrc = R.drawable.group_11;
+                break;
                 default:
                     imagesrc = R.drawable.ic_tutorial_1;
                     break;
@@ -173,6 +176,9 @@ public class InfoMain extends Activity {
                 break;
             case "4":
                 imagesrc = R.drawable.group_10;
+                break;
+            case "5":
+                imagesrc = R.drawable.group_11;
                 break;
             default:
                 imagesrc = R.drawable.ic_tutorial_1;
